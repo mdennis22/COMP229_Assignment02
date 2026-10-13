@@ -45,7 +45,7 @@ export const updateContacts = async (req, res) => {
     res.status(500).json({ message: error.message });
   }
 };
-
+// Deletes Contact by ID
 export const deleteContacts = async (req, res) => {
   try {
     const deleteContact = await ContactModel.findByIdAndDelete(req.params.id);
