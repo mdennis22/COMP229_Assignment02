@@ -1,0 +1,79 @@
+/* Base Layout */
+.home-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 60px 20px;
+  color: #e0e0e0;
+  font-family: sans-serif;
+  text-align: center;
+}
+
+/* Main Heading */
+.home-container h1 {
+  font-size: 2.8rem;
+  color: #ffffff;
+  margin-bottom: 12px;
+}
+
+/* Divider */
+.divider {
+  border: 0;
+  height: 2px;
+  background-color: #333333;
+  width: 80px;
+  margin: 16px auto 24px auto;
+}
+
+/* Subtitle & Bio */
+.subtitle {
+  font-size: 1.25rem;
+  color: #a0a0a0;
+  font-weight: 500;
+  margin-bottom: 16px;
+}
+
+.bio {
+  font-size: 1rem;
+  color: #888888;
+  max-width: 600px;
+  margin: 0 auto 32px auto;
+  line-height: 1.6;
+}
+
+/* Buttons */
+.cta-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-bottom: 40px;
+}
+
+.btn {
+  padding: 10px 20px;
+  border-radius: 4px;
+  font-size: 0.95rem;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+/* Social Links */
+.social-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  font-size: 0.9rem;
+}
+
+.social-links a {
+  color: #6699ff;
+  text-decoration: none;
+}
+
+.social-links a:hover {
+  text-decoration: underline;
+}
+
+.social-links span {
+  color: #555555;
+}

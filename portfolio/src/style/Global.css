@@ -1,0 +1,96 @@
+body {
+  background-color: #241d1d;
+  color: #e0e0e0;
+  font-family: sans-serif;
+  line-height: 1.6;
+  padding: 20px;
+  margin: 0;
+}
+.greeting {
+  font-size: 1.25rem;
+  color: #6699ff;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 8px;
+}
+
+h1,
+h2,
+h3 {
+  color: #ffffff;
+  margin-bottom: 12px;
+}
+
+p {
+  color: #ffffff;
+  margin-bottom: 16px;
+}
+.btn-primary {
+  background-color: #3366cc;
+  color: #ffffff;
+}
+
+.btn-primary:hover {
+  background-color: #254e99;
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: #e0e0e0;
+  border: 1px solid #333333;
+}
+
+.btn-secondary:hover {
+  border-color: #6699ff;
+  color: #6699ff;
+}
+.layout {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 24px 20px;
+  color: #ffffff;
+  font-family: sans-serif;
+}
+.layout h1 {
+  font-size: 2.5rem;
+  margin-bottom: 12px;
+}
+.nav-links a,
+.nav-links a:visited {
+  color: #6699ff;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: color 0.2s ease;
+}
+.nav-links a:hover {
+  color: #88b3ff;
+}
+.nav-links a:visited {
+  color: #6699ff;
+}
+.nav-links a.active {
+  color: #ffffff;
+  font-weight: bold;
+}
+.project-screetshots img {
+  width: 550px;
+  height: 500px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-top: 12px;
+}
+.logo {
+  height: 100px; /* Adjust size to fit your design */
+  width: auto;
+  object-fit: contain;
+}
+.header h1 {
+  margin: 0;
+  color: #fce300;
+}
+.header {
+  display: flex;
+  align-items: center; /* Vertically centers the logo with text */
+  justify-content: center; /* Horizontally centers the entire group */
+  gap: 15px; /* Adjust spacing between logo and text */
+}
