@@ -1,4 +1,5 @@
 import UserModel from "../models/users-model.js";
+import generateToken from "../utils/jwt.js";
 
 export const getAllUsers = async (req, res) => {
   try {
@@ -18,11 +19,24 @@ export const getUserById = async (req, res) => {
   }
 };
 
+// export const createUser = async (req, res) => {
+//   try {
+//     const newUser = new UserModel(req.body);
+//     const savedUser = await newUser.save();
+//     res.status(201).json(savedUser);
+//   } catch (error) {
+//     res.status(500).json({ message: error.message });
+//   }
+// };
+
 export const createUser = async (req, res) => {
   try {
     const newUser = new UserModel(req.body);
     const savedUser = await newUser.save();
-    res.status(201).json(savedUser);
+
+    const token = generateToken(savedUser);
+
+    res.status(201).json({ user: savedUser, token });
   } catch (error) {
     res.status(500).json({ message: error.message });
   }
@@ -50,6 +64,28 @@ export const deleteUser = async (req, res) => {
     }
 
     res.status(200).json({ message: "User deleted successfully" });
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+};
+
+export const loginUser = async (req, res) => {
+  try {
+    const { email, password } = req.body;
+    const user = await UserModel.findOne({ email });
+
+    if (!user) {
+      return res.status(404).json({ message: "User not found" });
+    }
+
+    const isMatch = await user.comparePassword(password);
+    if (!isMatch) {
+      return res.status(401).json({ message: "Invalid credentials" });
+    }
+
+    const token = generateToken(user);
+
+    res.status(200).json({ message: "Login Successful", token });
   } catch (error) {
     res.status(500).json({ message: error.message });
   }

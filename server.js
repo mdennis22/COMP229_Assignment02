@@ -1,11 +1,15 @@
 //import express from "express";
 //var express = require("express");
 //var app = express();
+import dotenv from "dotenv";
+dotenv.config(); // Load environment variables from .env file
+import authMiddleware from "./server/middlewares/auth.js";
 import app from "./server/express.js";
-import router from "./server/assets-router.js";
+// import router from "./server/assets-router.js";
 //const assetsRouter = require("./server/assets-router");
-import express from "express";
+// import express from "express";
 import mongoose from "mongoose";
+
 import contactRoutes from "./server/routes/contact-routes.js";
 import projectsRoutes from "./server/routes/projects-routes.js";
 import usersRoutes from "./server/routes/users-routes.js";
@@ -28,8 +32,9 @@ app.listen(PORT, () => {
 });
 
 app.use("/api/contacts", contactRoutes);
-app.use("/api/projects", projectsRoutes);
+app.use("/api/projects", authMiddleware, projectsRoutes);
 app.use("/api/users", usersRoutes);
 app.use("/api/qualifications", qualificationsRoutes);
+
 //module.exports = app;
 export default app;
