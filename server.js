@@ -7,6 +7,9 @@ import router from "./server/assets-router.js";
 import express from "express";
 import mongoose from "mongoose";
 import contactRoutes from "./server/routes/contact-routes.js";
+import projectsRoutes from "./server/routes/projects-routes.js";
+import usersRoutes from "./server/routes/users-routes.js";
+import qualificationsRoutes from "./server/routes/qualifications-routes.js";
 
 const PORT = process.env.PORT || 5000;
 
@@ -23,6 +26,10 @@ app.get("/", (req, res) => {
 app.listen(PORT, () => {
   console.log(`Server is running on http://localhost:${PORT}`);
 });
+
 app.use("/api/contacts", contactRoutes);
+app.use("/api/projects", projectsRoutes);
+app.use("/api/users", usersRoutes);
+app.use("/api/qualifications", qualificationsRoutes);
 //module.exports = app;
 export default app;
